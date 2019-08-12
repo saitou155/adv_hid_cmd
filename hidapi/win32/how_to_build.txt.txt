@@ -1,0 +1,10 @@
+git clone https://github.com/signal11/hidapi.git
+cd hidapi
+libtoolize -c
+autoheader
+aclocal
+automake -a -c
+autoconf
+./configure
+make
+ls -al windows/.libs/
