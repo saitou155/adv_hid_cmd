@@ -49,6 +49,20 @@ To output the Text HEX file with this command, use the shell function as follows
 ./adv_hid_cmd -t "`cat panasonic_tv_power.txt`"
 ```
 
+### Linux permission setting
+
+Add a rule to udev In LINUX as follows:
+```
+# /etc/udev/rules.d/99-irusb.rules
+#	bto_advance
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="22ea", ATTRS{idProduct}=="003a", GROUP="users", MODE="0666"
+```
+
+Update is as follows:
+```
+sudo udevadm control --reload-rules
+```
+
 ## License
 
 This project is Free software.
